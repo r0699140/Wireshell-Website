@@ -1,0 +1,172 @@
+.registerContainer {
+    background-color: white;
+    position: fixed;
+    width: 500px;
+    height: 550px;
+    margin-left: calc(50vw - 250px);
+    margin-top: calc(50vh - 300px);
+    border-radius: 10px;
+    border: 5px solid white;
+    box-shadow: 0px 0px 0px 2px lightgrey inset;
+}
+
+#Email1
+{
+  width: 420px;
+}
+
+
+.passwordContainer{
+    float: left;
+    width: 200px;
+}
+
+.passwordContainer2{
+    float: right;
+    margin-right: 70px;
+    width: 200px;
+}
+
+.nameContainer
+{
+    float: left;
+    width: 200px;
+}
+
+.lastnameContainer
+{
+    float: right;
+    width: 200px;
+    margin-right: 58px;
+}
+
+.registerContainer > input, .passwordContainer > input,
+.passwordContainer2 > input, .emailContainer > input, .nameContainer > input, .lastnameContainer > input{
+    border-radius: 5px;
+    margin-left: 35px;
+    outline: none;
+    border: 1px solid lightgrey;
+}
+
+input:focus {
+    border-color: darkgray;
+}
+
+.Bar {
+    width: 200px;
+    height: 40px;
+    padding-left: 15px;
+    margin-top: 20px;
+}
+
+.BarFault {
+    background-color: #F2E1E1;
+}
+
+.RegisterSpan {
+    font-size: larger;
+    text-transform: uppercase;;
+    font-weight: lighter;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.register{
+    display: block;
+    /*width: 124px;*/
+    height: 44px;
+    line-height: 34px;
+
+    margin-left: 183px !important;
+    margin: 100px auto 0;
+
+
+
+    background-color: rgb(var(--green));
+    text-transform: uppercase;
+    border-radius: 5px !important;
+    border: none;
+    transition: 600ms cubic-bezier(0.18, 0.89, 0.32, 1.28) all;
+    clear: both;
+
+    cursor: pointer;
+    text-align: center;
+    font-family: "Roboto Mono", monospace;
+    font-size: 12pt;
+}
+/*
+.register > i{
+  display: none;
+}
+
+.register:disabled > i:first-child{
+  display: inline-block;
+}
+*/
+
+.register:disabled:hover{
+  transform: none;
+  cursor: inherit;
+}
+
+.register:hover{
+    transform: scale(1.07);
+}
+
+.register:disabled{
+  background-color: rgba(var(--green), 0.3);
+  /*border-color: rgba(var(--black), 0.5) !important;*/
+}
+
+#errorPassword1, #errorPassword2
+{
+    padding-left: 5px;
+}
+
+.errorBox
+{
+    height: 30px;
+    padding-top: 14px;
+    text-align: left;
+    font-size: small;
+    width: 420px;
+    overflow: hidden;
+    margin-top: -20px;
+    color: red;
+    display: inline-block;
+    padding-left: 5px;
+    margin-left: 30px;
+}
+
+.verplicht
+{
+  margin-top: 10px;
+    text-align: center;
+}
+
+.crossRegister
+{
+    float: right;
+    position: relative;
+    bottom: 155px;
+    right: 15px;
+    font-size: large;
+    color: darkgray;
+    cursor: pointer;
+}
+
+.crossRegister:hover
+{
+    color: grey;
+}
+
+.logoRegister
+{
+  height: 100px;
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

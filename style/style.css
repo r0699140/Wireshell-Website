@@ -1,0 +1,33 @@
+:root{
+    --purple: 110, 54, 103;
+    --green: 136, 211, 23;
+    --black: 26, 3, 21;
+    --grey: 83, 83, 83;
+    --white: 192, 192, 192;
+}
+
+*
+{
+    box-sizing: border-box;
+    outline: none;
+}
+
+body{
+    margin: 0;
+    font-family: "Roboto Mono", monospace;
+}
+
+.blackbackground
+{
+    width: 100vw;
+    height: 100vw;
+    background-color: rgba(0,0,0,0.6);
+    position: fixed;
+    z-index: 100;
+    display: none;
+}
+
+.clear
+{
+  clear:both;
+}

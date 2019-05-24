@@ -1,0 +1,466 @@
+div#bodyContainer {
+    background-color: rgba(var(--white), 0.2);
+    height: calc(100vh - 48px);
+    width: 100vw;
+    overflow: auto;
+}
+
+p {
+    margin: 0;
+    text-align: center;
+
+}
+
+.TitleBody {
+    font-size: 25px;
+    font-weight: 200;
+    padding-top: 30px;
+}
+
+.description {
+    width: 70vw;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    margin-top: 80px;
+}
+
+.iconContainer {
+    display: grid;
+    grid-template-areas: 'connec prot info';
+    width: 610px;
+    height: 150px;
+    margin-left: calc(50vw - 305px);
+    font-size: 75px;
+    line-height: 150px;
+    color: rgba(0,0,0,0.6);
+}
+
+.circle
+{
+    border: 2px solid rgba(var(--green),0.9);
+    border-radius: 100px;
+    width: 150px;
+    background-color: rgba(var(--green),0.5);
+}
+
+.connection
+{
+    grid-area: "connec";
+    margin-right: 80px;
+}
+
+.protectin
+{
+    grid-area: "prot";
+}
+
+.information
+{
+    grid-area: "info";
+    margin-left: 80px;
+}
+
+.flip
+{
+    width:150px;
+    height: 150px;
+    background-color: transparent;
+    perspective: 1000px;
+}
+
+
+.flip-inner
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip:hover .flip-inner
+{
+    transform: rotateY(180deg);
+}
+
+.front, .back
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.front
+{
+    background-color: rgba(var(--green),0.5);
+    z-index: 2;
+}
+
+.back
+{
+    background-color:rgba(var(--green),0.5);
+    color: rgba(0,0,0,0.6);
+    transform: rotateY(180deg);
+    z-index: 1;
+    font-size: 20px;
+}
+
+.downloadButton
+{
+    background-color: rgba(var(--green));
+    display:block;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 20px;
+    color: rgba(0,0,0,0.6);;
+    font-weight: lighter;
+    border-radius: 5px;
+    transition: all 0.4s;
+    margin: 60px auto;
+}
+
+.downloadButton:hover
+{
+    color: white;
+    background-color: rgba(0,0,0,0.6);
+    cursor: pointer;
+}
+
+.logoBody
+{
+  height: 200px;
+  width: 214px;
+  margin-left: calc(50vw - 107px);
+  margin-top: 10px;
+  margin-right: calc(50vw - 107px);
+}
+
+.performanceMeters
+{
+  background-color: white;
+  width: calc(100% - 96px);
+  max-height: 200px;
+  height: 200px;
+  margin: 0 auto;
+
+  transition: 0.55s margin;
+  border: 1px solid rgba(var(--white),0.3);
+  border-top: none;
+
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: inset 0px -1px 2px rgba(var(--white),0.9);
+}
+
+.openClosePM
+{
+  text-align: center;
+  color: rgba(var(--white),0.9);
+  line-height: 20px;
+  background-color: white;
+  margin-left: calc(50vw - 35px);
+  margin-top: -1.7px;
+  width: 70px;
+  height: 25px;
+  border: 1px solid rgba(var(--white),0.3);
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  box-shadow: inset 0px -1px 2px rgba(var(--white),0.9);
+}
+
+.openClosePM:hover
+{
+  color: black;
+  cursor: pointer;
+}
+
+
+.Processes
+{
+  height: calc(100vh - 325px);
+  width: calc(100% - 96px);
+  background-color: white;
+  border: 1px solid rgba(var(--white),0.3);
+  box-shadow: inset 0px -1px 2px rgba(var(--white),0.9);
+  border-radius: 15px;
+  transition: height .5s;
+  padding-right: 15px;
+
+  margin: 15px auto;
+
+  padding: 15px;
+  padding-bottom: 0;
+}
+
+.Processes::before,
+.performanceMeters::before
+{
+  content: "ACTIVE CONNECTIONS";
+  text-transform: uppercase;
+  font-weight: lighter;
+  color: rgba(var(--black),0.5);
+  padding: 5px;
+  display: block;
+  width: 100%;
+}
+
+.performanceMeters::before
+{
+  margin-left: 15px;
+}
+
+.Processes::before{
+  content: "Processen";
+}
+
+#ProcessContainer{
+  width: 100%;
+  height: calc(100% - 33px);
+  overflow: auto;
+
+  display: grid;
+  grid-gap: 25px;
+
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: repeat(auto-fit, 250px);
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
+
+.ProcessBox{
+  height: 100%;
+  border: 1px solid rgba(var(--black),0.2);
+  box-shadow: inset 0px -1px 2px rgba(var(--white),0.9);
+  border-radius: 8px;
+
+  padding: 10px;
+
+  display: grid;
+
+  grid-template-columns: 2fr  1fr  2fr;
+  grid-template-rows: 25px 50px 25px 105px;
+  grid-template-areas: "header header header"
+                       "RAM . CPU"
+                       "Amount Amount Amount"
+                       "Graph Graph Graph";
+}
+
+.ProcessBox p.pName{
+  color: rgba(var(--black),0.8);
+  font-size: 12pt;
+  border-bottom: 1px solid rgba(var(--black),0.15);
+
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: lighter;
+  grid-area: header;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.ProcessBox p.pRam{
+  grid-area: RAM;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.ProcessBox p.pCPU{
+  grid-area: CPU;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.ProcessBox p.pAmount{
+  grid-area: Amount;
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: smaller;
+  text-align: left;
+}
+
+.ProcessBox p.pGraph{
+  grid-area: Graph;
+}
+
+.ProcessBox p.pGraph canvas{
+  height: 100%;
+  max-width: 100%;
+}
+
+.ProcessBox div.pDetail{
+  grid-area: Detail;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.ProcessBox div.pDetail > span
+{
+  border: 1px solid rgba(var(--black),0.2);
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  border-radius: 5px;
+
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.ProcessBox div.pDetail > span:hover
+{
+  cursor: pointer;
+  background-color: rgb(240,240,240);
+  box-shadow: 0px 1px 1px rgba(var(--white),0.9);
+  user-select: none;
+
+}
+
+#ProcessContainer::-webkit-scrollbar
+{
+	width: 18px;
+	background-color: transparent;
+}
+
+#ProcessContainer::-webkit-scrollbar-track,
+#ProcessContainer::-webkit-scrollbar-thumb {
+  border: 10px solid transparent;
+  border-top: none;
+  border-right: none;
+  background-clip: padding-box;
+}
+
+#ProcessContainer::-webkit-scrollbar-thumb
+{
+	background-color: rgba(var(--black), 0.18);
+}
+
+.PMContainer{
+  height: calc((50vw - 96px) / 8);
+  padding-left: 3vw;
+  max-height: 100%;
+  margin-top: calc(60px - 3vw);
+  text-align: center;
+}
+
+.PMContainer > .activeCon > div,
+.PMContainer > .activeCon{
+  width: calc((50vw - 96px) / 8);
+  height: calc((50vw - 96px) / 8);
+
+  border-radius: 50%;
+}
+
+.PMContainer > .activeCon{
+  display: inline-block;
+
+  margin-right: 3vw;
+  background-color: rgb(var(--green));
+
+  font-size: 0;
+
+  text-align: left;
+}
+
+.PMContainer > .activeCon:after,
+.PMContainer > .activeCon:before{
+  width: calc((50vw - 250px) / 8);
+
+  z-index: 11;
+
+  text-transform: uppercase;
+  color: rgba(var(--black),0.6);
+
+  display: inline-block;
+  position: absolute;
+}
+
+.PMContainer > .activeCon:before{
+  content: attr(data-before);
+
+  margin-top: -1vw;
+  margin-left: -2vw;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+  font-size: 10pt;
+
+  text-align: right;
+}
+
+.PMContainer > .activeCon:after{
+  content: attr(data-after);
+
+  margin-top: calc(3vw + 15px);
+  margin-left: calc(3vw + 5px);
+
+  font-size: 10pt;
+}
+
+.activeCon > .halfCircle{
+  position: absolute;
+  z-index: 1;
+
+  border: 1px solid white;
+
+  transition: 0.5s transform
+}
+
+.activeCon > .leftMoon{
+  background: linear-gradient(to right, red 50%, transparent 50%);
+}
+
+.activeCon > .rightMoon{
+  background: linear-gradient(to right, transparent 50%, red 50%);
+}
+
+.activeCon > .switchMoon{
+  z-index: 5;
+  background: linear-gradient(to right, transparent 50%, rgb(var(--green)) 50%);
+}
+
+.activeCon > .circleOverlay{
+  z-index: 10;
+
+  background-color: white;
+  position: absolute;
+
+  width: calc((50vw - 232px) / 8) !important;
+  height: calc((50vw - 232px) / 8) !important;
+
+  margin-left: calc((136px / 8) / 2);
+  margin-top: calc((136px / 8) / 2);
+
+  text-align: center;
+  font-size: calc(1vw + 5pt);
+
+  line-height: calc((50vw - 232px) / 8);
+
+  font-family: 'Roboto Mono', monospace;
+  /*display: none;*/
+}
+
+#updateButton
+{
+  background-color: rgba(var(--green),1);
+  border: none;
+  height: 30px;
+  float: right;
+  margin-top: -35px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+#updateButton:hover
+{
+  color: white;
+  cursor:pointer;
+}
